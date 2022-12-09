@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class MyCollectionViewCell: UICollectionViewCell  {
     static let identifier = "MyCollectionViewCell"
     
@@ -22,7 +21,7 @@ class MyCollectionViewCell: UICollectionViewCell  {
     let images: [UIImage] = [
         UIImage(named: "image1"),
         UIImage(named: "image2"),
-        UIImage(named: "image3"),
+        UIImage(named: "image3")
     ].compactMap({ $0 })
 
     override init(frame: CGRect) {

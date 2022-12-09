@@ -31,5 +31,14 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
-
 }
+
+
+/*
+ Aby stworzyć podstwowy Collection View należy:
+ 1.Tworzymy obiekt z UICollectionView. Przekazujemy jako parametr "frame" .zero = CGRect(x: 0, y: 0, width: 0, height: 0)
+ 
+ 
+ 
+ 
+ */
