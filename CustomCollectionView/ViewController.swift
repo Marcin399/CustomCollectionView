@@ -64,13 +64,13 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func registerCell() {
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        collectionView.register(MyCollectionViewCellRed.self, forCellWithReuseIdentifier: MyCollectionViewCellRed.identifier)
         collectionView.register(MyCollectionViewCellBlue.self, forCellWithReuseIdentifier: MyCollectionViewCellBlue.identifier)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if self.boolean.randomElement() == true {
-            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
+            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCellRed.identifier, for: indexPath)
             return cellRed
         }
         
@@ -82,15 +82,3 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         return 100
     }
 }
-
-
-/*
- Aby stworzyć podstwowy Collection View należy:
- 1.Tworzymy obiekt z UICollectionView. Parametr "frame" .zero = CGRect(x: 0, y: 0, width: 0, height: 0). Parametr collectionViewLayout ...
- 2.Tworzymy nową klase która dziedziczy po UICollectionViewCell w niej tworzymy obiekt z UIImageView
- clipsToBounds Ustawienie tej wartości na truepowoduje przycięcie widoków podrzędnych do granic widoku. W przypadku ustawienia na widoki falsepodrzędne, których ramki wykraczają poza widoczne granice widoku, nie są przycinane.
- 
- 
- 
- 
- */
