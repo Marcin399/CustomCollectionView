@@ -14,7 +14,7 @@
 		D37072912943AD090098A8EF /* CustomCollectionView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D370728F2943AD090098A8EF /* CustomCollectionView.xcdatamodeld */; };
 		D37072932943AD0B0098A8EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37072922943AD0B0098A8EF /* Assets.xcassets */; };
 		D37072962943AD0B0098A8EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37072942943AD0B0098A8EF /* LaunchScreen.storyboard */; };
-		D37072A02943C9190098A8EF /* MyCollectionViewRedCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370729F2943C9190098A8EF /* MyCollectionViewRedCells.swift */; };
+		D37072A02943C9190098A8EF /* MyCollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370729F2943C9190098A8EF /* MyCollectionViewCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		D37072922943AD0B0098A8EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D37072952943AD0B0098A8EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D37072972943AD0B0098A8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D370729F2943C9190098A8EF /* MyCollectionViewRedCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewRedCells.swift; sourceTree = "<group>"; };
+		D370729F2943C9190098A8EF /* MyCollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 				D37072862943AD090098A8EF /* AppDelegate.swift */,
 				D37072882943AD090098A8EF /* SceneDelegate.swift */,
 				D370728A2943AD090098A8EF /* ViewController.swift */,
-				D370729F2943C9190098A8EF /* MyCollectionViewRedCells.swift */,
+				D370729F2943C9190098A8EF /* MyCollectionViewCells.swift */,
 				D370728C2943AD090098A8EF /* Main.storyboard */,
 				D37072922943AD0B0098A8EF /* Assets.xcassets */,
 				D37072942943AD0B0098A8EF /* LaunchScreen.storyboard */,
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D370728B2943AD090098A8EF /* ViewController.swift in Sources */,
-				D37072A02943C9190098A8EF /* MyCollectionViewRedCells.swift in Sources */,
+				D37072A02943C9190098A8EF /* MyCollectionViewCells.swift in Sources */,
 				D37072912943AD090098A8EF /* CustomCollectionView.xcdatamodeld in Sources */,
 				D37072872943AD090098A8EF /* AppDelegate.swift in Sources */,
 				D37072892943AD090098A8EF /* SceneDelegate.swift in Sources */,
