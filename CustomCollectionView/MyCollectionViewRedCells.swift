@@ -10,20 +10,9 @@ import UIKit
 
 class MyCollectionViewCellRed: UICollectionViewCell  {
    
-    static let identifier = "MyCollectionViewCell"
+    static let identifier = "MyCollectionViewCellRed"
   
-    static let alpha = [
-        CGFloat(0.02),
-        CGFloat(0.04),
-        CGFloat(0.06),
-        CGFloat(0.08),
-        CGFloat(0.1),
-        CGFloat(0.12),
-        CGFloat(0.14),
-        CGFloat(0.16),
-        CGFloat(0.18),
-        CGFloat(0.2),
-    ]
+    let alphaForBGColor = RandomAlpha()
     
     var imageView : UIImageView = {
         let imageView = UIImageView()
@@ -38,7 +27,7 @@ class MyCollectionViewCellRed: UICollectionViewCell  {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-        imageView.layer.backgroundColor = CGColor(red: 1, green: 0, blue: 0, alpha: MyCollectionViewCellRed.alpha.randomElement() ?? 0.00)
+        imageView.layer.backgroundColor = CGColor(red: 1, green: 0, blue: 0, alpha: alphaForBGColor.alphaValue.randomElement() ?? 0.0)
     }
     
     required init?(coder: NSCoder) {
@@ -53,18 +42,8 @@ class MyCollectionViewCellRed: UICollectionViewCell  {
 
 class MyCollectionViewCellBlue: UICollectionViewCell {
     static let identifier = "MyCollectionViewCellBue"
-    static let alpha = [
-        CGFloat(0.02),
-        CGFloat(0.04),
-        CGFloat(0.06),
-        CGFloat(0.08),
-        CGFloat(0.1),
-        CGFloat(0.12),
-        CGFloat(0.14),
-        CGFloat(0.16),
-        CGFloat(0.18),
-        CGFloat(0.2),
-    ]
+    
+    let alphaForBGColor = RandomAlpha()
     
     var imageView : UIImageView = {
         let imageView = UIImageView()
@@ -79,7 +58,7 @@ class MyCollectionViewCellBlue: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
-        imageView.layer.backgroundColor = CGColor(red: 0, green: 0, blue: 1, alpha: MyCollectionViewCellRed.alpha.randomElement() ?? 0.00)
+        imageView.layer.backgroundColor = CGColor(red: 0, green: 0, blue: 1, alpha: alphaForBGColor.alphaValue.randomElement() ?? 0.0)
     }
     
     required init?(coder: NSCoder) {
@@ -90,4 +69,19 @@ class MyCollectionViewCellBlue: UICollectionViewCell {
         super.layoutSubviews()
         imageView.frame = contentView.frame
     }
+}
+
+struct RandomAlpha {
+    let alphaValue = [
+        CGFloat(0.02),
+        CGFloat(0.04),
+        CGFloat(0.06),
+        CGFloat(0.08),
+        CGFloat(0.1),
+        CGFloat(0.12),
+        CGFloat(0.14),
+        CGFloat(0.16),
+        CGFloat(0.18),
+        CGFloat(0.2),
+    ]
 }
