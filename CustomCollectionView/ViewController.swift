@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         view.addSubview(collectionView)
         collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
         collectionView.frame = view.bounds
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .white
         collectionView.dataSource = self
     }
     
