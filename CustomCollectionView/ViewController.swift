@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource {
     
+    private var boolean = [true, false]
+    
     private var collectionView = UICollectionView (
         frame: .zero,
         collectionViewLayout: createLayout()
@@ -17,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        registerCell()
         collectionView.frame = view.bounds
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
@@ -61,9 +63,19 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
+    func registerCell() {
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        collectionView.register(MyCollectionViewCellBlue.self, forCellWithReuseIdentifier: MyCollectionViewCellBlue.identifier)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
-        return cell
+        if self.boolean.randomElement() == true {
+            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
+            return cellRed
+        }
+        
+        let cellBlue = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCellBlue.identifier, for: indexPath)
+        return cellBlue
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
