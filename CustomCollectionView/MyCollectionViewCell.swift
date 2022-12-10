@@ -48,3 +48,44 @@ class MyCollectionViewCell: UICollectionViewCell  {
         imageView.frame = contentView.frame
     }
 }
+
+class MyCollectionViewCellBlue: UICollectionViewCell  {
+    static let identifier = "MyCollectionViewCellBue"
+    static let alpha = [
+        CGFloat(0.02),
+        CGFloat(0.04),
+        CGFloat(0.06),
+        CGFloat(0.08),
+        CGFloat(0.1),
+        CGFloat(0.12),
+        CGFloat(0.14),
+        CGFloat(0.16),
+        CGFloat(0.18),
+        CGFloat(0.2),
+    ]
+    
+    var imageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.layer.borderWidth = 4
+        imageView.layer.borderColor = CGColor(red: 0, green: 0, blue: 1, alpha: 0.2)
+        return imageView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(imageView)
+        imageView.layer.backgroundColor = CGColor(red: 0, green: 0, blue: 1, alpha: MyCollectionViewCell.alpha.randomElement() ?? 0.00)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.frame = contentView.frame
+    }
+}

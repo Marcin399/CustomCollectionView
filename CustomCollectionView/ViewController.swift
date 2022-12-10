@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource {
-   
+    
+    private let bollean = [true, false]
+    
     private var collectionView = UICollectionView (
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
@@ -17,15 +19,25 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        registerCell()
         collectionView.frame = view.bounds
         collectionView.backgroundColor = .white
         collectionView.dataSource = self
     }
     
+    func registerCell() {
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        collectionView.register(MyCollectionViewCellBlue.self, forCellWithReuseIdentifier: MyCollectionViewCellBlue.identifier)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
-        return cell
+        if self.bollean.randomElement() == true {
+            let cellRed = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath)
+            return cellRed
+        }
+        
+        let cellBlue = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCellBlue.identifier, for: indexPath)
+        return cellBlue
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,11 +46,8 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 }
 
 
-/*
- Aby stworzyć podstwowy Collection View należy:
- 1.Tworzymy obiekt z UICollectionView. Przekazujemy jako parametr "frame" .zero = CGRect(x: 0, y: 0, width: 0, height: 0)
- 
- 
- 
- 
- */
+
+
+
+
+
